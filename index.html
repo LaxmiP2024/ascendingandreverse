@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Write a program to print the prime numbers in reverse order in the given number
+
+      /*why iteration is starting from end*/
+      function isPrime(digit) {
+        if (digit === "2" || digit === "3" || digit === "5" || digit === "7") {
+          return true;
+        }
+        return false;
+      }
+    function reversePrimeDigits(num) {
+        let strNum = num.toString();
+        let result = "";
+
+        for (let i = strNum.length - 1; i >= 0; i--) {
+          let digit = strNum[i];
+
+          if (isPrime(digit)) {
+            result += digit;
+          }
+        }
+
+        console.log(parseInt(result));
+      }
+      reversePrimeDigits(26538731);
+
+      //Write a program to print the prime numbers in ascending order in the given number
+
+      function isPrime(digit) {
+        if (digit === "2" || digit === "3" || digit === "5" || digit === "7") {
+          return true;
+        }
+        return false;
+      }
+    function ascendingPrimeDigits(num) {
+        let strNum = num.toString();
+        let result = [];
+
+        for (let i = strNum.length - 1; i >= 0; i--) {
+          let digit = strNum[i];
+
+          if (isPrime(digit)) {
+            result.push(digit);
+          }
+        }
+
+        result.sort();
+        console.log(result.join(""));
+      }
+      ascendingPrimeDigits(6723783);
+
+      /*Another method for ascending but what is the use of math.floor ,num%10 ,sort(a,b)=>a-b*,why iteration is starting from end */
+      //     function isPrime(digit) {
+      //     return digit === 2 || digit === 3 || digit === 5 || digit === 7;
+      // }
+
+      // function printPrimeDigitsInAscendingOrder(num) {
+      //     let primeDigits = [];
+
+      //     while (let i = strNum.length - 1; i >= 0; i--) {
+      //         let digit = num[i] or num%10;
+      //         if (isPrime(digit)) {
+      //             primeDigits.push(digit);
+      //         }
+      //         num = Math.floor(num / 10);
+      //     }
+
+      //     primeDigits.sort((a, b) => a - b);
+      //     console.log(primeDigits.join(''));
+      // }
+      //printPrimeDigitsInAscendingOrder(729936);
+    </script>
+  </body>
+</html>
